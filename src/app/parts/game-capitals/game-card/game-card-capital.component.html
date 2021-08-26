@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <form [formGroup]="formQuestions" (ngSubmit)="onSubmit()" class="card mt-5 py-3 px-3 col-xl-4 col-md-8 col-sm-12 shadow rounded">
+            <div class="title my-3">
+                <h3>La capital de {{showResponse.name}} es?</h3>
+            </div>
+            <div class="form-control mt-2" *ngFor="let question of showQuestions; let i= index">
+                <input type="radio" id={{question.capital}} formControlName={{question.capital}}>
+                <label class="mx-3"for={{question.capital}}>{{question.capital}}</label>
+            </div>
+            <div class="d-grid">
+                <button class="btn btn-primary mt-4">COMPROBAR</button>
+            </div>
+        </form>
+    </div>
+</div>
